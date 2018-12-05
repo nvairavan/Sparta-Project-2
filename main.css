@@ -1,0 +1,13 @@
+body { font-family: 'Helvetica' }
+table {
+  margin: 0 auto;
+  border-radius:10px;
+}
+
+td {
+  border: 1px solid black;
+  width: 75px;
+  height: 75px;
+  text-align: center;
+  font-size: 8em;
+}
