@@ -79,11 +79,11 @@ function startGame() {
 
   function matching(e) {
     if (!firstClickedTile) {
-      firstClickedTile = e.target.parentNode;
-      firstClickedTile.firstChild.style.filter = "blur(0px)";
+      firstClickedTile = e.target;
+      firstClickedTile.style.filter = 'blur(0px)';
     } else if (e.target.parentNode !== firstClickedTile) {
-      secondClickedTile = e.target.parentNode;
-      secondClickedTile.firstChild.style.filter = "blur(0px)"
+      secondClickedTile = e.target;
+      secondClickedTile.style.filter = 'blur(0px)';
 
       /*
       If the tiles match:
@@ -93,21 +93,21 @@ function startGame() {
       Else keep the blur.
       */
 
-      if (firstClickedTile.firstChild.innerText == secondClickedTile.firstChild.innerText) {
+      if (firstClickedTile.innerText == secondClickedTile.innerText) {
         firstClickedTile.classList.add('matched');
         secondClickedTile.classList.add('matched');
 
         firstClickedTile.removeEventListener('click', matching);
         secondClickedTile.removeEventListener('click', matching);
 
-        firstClickedTile.firstChild.style.filter = 'blur(0px)';
-        secondClickedTile.firstChild.style.filter = 'blur(0px)';
+        firstClickedTile.style.filter = 'blur(0px)';
+        secondClickedTile.style.filter = 'blur(0px)';
 
         tilesClickDelayAndWinCheck();
       } else {
         setTimeout(() => {
-          firstClickedTile.firstChild.style.filter = 'blur(15px)';
-          secondClickedTile.firstChild.style.filter = 'blur(15px)';
+          firstClickedTile.style.filter = 'blur(15px)';
+          secondClickedTile.style.filter = 'blur(15px)';
         }, 400);
 
         tilesClickDelayAndWinCheck();
