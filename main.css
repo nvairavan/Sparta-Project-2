@@ -1,21 +1,3 @@
-/* body {
-  margin: 50px;
-	background: rgb(15%, 15%, 15%);
-	font-family: sans-serif;
-	transition: .6s;
-} */
-table {
-  margin: 0 auto;
-  border-radius:10px;
- }
-              
-td {
-  border: 1px solid black;
-  width: 75px;
-  height: 75px;
-  text-align: center;
-  font-size: 16em;
-}
 body {
 	margin: 0;
 	/* background: rgb(15%, 15%, 15%); */
@@ -28,6 +10,10 @@ button {
   height: 50px;
   margin: 20px;
 	cursor: pointer;
+}
+
+#intro {
+  text-align: center;
 }
 
 #play-area {
@@ -52,5 +38,31 @@ button {
 	top: 50%;
 	transform: translateY(-50%);
 	/* filter: blur(20px); */
-	user-select: none;
+	/* user-select: none; */
+}
+
+
+.flip3D{ 
+  width:110px; height:110px; margin:0px; float:left;
+ }
+
+.flip3D > .front{
+	position:absolute;
+	transform: perspective( 600px ) rotateY( 0deg );
+	background:#FC0; width:110px; height:110px;
+	backface-visibility: hidden;
+	transition: transform .5s linear 0s;
+}
+.flip3D > .back{
+	position:absolute;
+	transform: perspective( 600px ) rotateY( 180deg );
+	background: #80BFFF; width:110px; height:110px;
+	backface-visibility: hidden;
+	transition: transform .5s linear 0s;
+}
+.flip3D:hover > .front{
+	transform: perspective( 600px ) rotateY( -180deg );
+}
+.flip3D:hover > .back{
+	transform: perspective( 600px ) rotateY( 0deg );
 }
