@@ -1,14 +1,6 @@
 var tiles = 16;
-var timer = 25;
+var timer = 3;
 var points = 0;
-
-let firstClickedTile;
-let secondClickedTile;
-
-// var card = document.querySelector('.tile');
-// card.addEventListener('click', function () {
-//   card.classList.toggle('is-flipped');
-// });
 
 var numsToAssign = [];
 for (let i = 0; i < tiles / 2; i++) {
@@ -39,34 +31,17 @@ function resetGame() {
 }
 
 function countDown() {
-  setInterval(function () {
+  var t = setInterval(function () {
     if (timer > 0) { timer--; }
     document.getElementById("timer").innerHTML = ("Time Left : " + timer)
     if (timer === 0) {
       document.getElementById('timeout').innerHTML = " You Lost!";
+      disableScreen()
+      clearInterval(t);
     }
   }, 1000)
 }
 
-// document.addEventListener("click", () => {
-//   matching();
-// })
-
-// function matching() {
-
-
-
-
-//   if (firstClickedTile.innerText == secondClickedTile.innerText) {
-//     firstClickedTile.classList.add('matched');
-//     secondClickedTile.classList.add('matched');
-//     points += 1;
-
-//   } else {
-//     firstClickedTile.removeEventListener('click');
-//     secondClickedTile.removeEventListener('click');
-//   }
-// }
 function startGame() {
   let tiles = document.querySelectorAll('.tile');
   let firstClickedTile;
@@ -77,11 +52,12 @@ function startGame() {
     tiles[i].addEventListener('click', matching);
   }
 
+
   function matching(e) {
     if (!firstClickedTile) {
       firstClickedTile = e.target;
       firstClickedTile.style.filter = 'blur(0px)';
-    } else if (e.target.parentNode !== firstClickedTile) {
+    } else if (e.target !== firstClickedTile) {
       secondClickedTile = e.target;
       secondClickedTile.style.filter = 'blur(0px)';
 
@@ -118,29 +94,42 @@ function startGame() {
       }, 400);
     }
   }
+}
+// Removes click events on tiles to be able to see the second tile, then adds events back.
+function tilesClickDelayAndWinCheck() {
+  let notMatchedTiles = 16;
 
-  // Removes click events on tiles to be able to see the second tile, then adds events back.
-  function tilesClickDelayAndWinCheck() {
-    let notMatchedTiles = 0;
+  for (let i = 0; i < tiles.length; i++) {
+    tiles[i].removeEventListener('click', matching);
 
-    for (let i = 0; i < tiles.length; i++) {
-      tiles[i].removeEventListener('click', matching);
-
-      if (!tiles[i].classList.contains('matched')) {
-        notMatchedTiles++;
-      }
+    if (!tiles[i].classList.contains('matched')) {
+      notMatchedTiles++;
     }
-
     if (notMatchedTiles === 0) {
       console.log('You won!');
-      winMenu();
+      // winMenu();
+      clearTimeout(timer);
+      alert("Winner")
       return;
+      alert("Game over, You Won!");
     }
-
     setTimeout(() => {
       for (let i = 0; i < tiles.length; i++) {
         tiles[i].addEventListener('click', matching);
       }
     }, 400);
   }
+}
+
+function disableScreen() {
+  // creates <div class="overlay"></div> and 
+  // adds it to the DOM
+  var div = document.createElement("div");
+  div.className += "overlay";
+  document.body.appendChild(div);
+
+
+  // document.getElementById("play-area").style.display = "none";
+
+  alert("You Lost")
 }
