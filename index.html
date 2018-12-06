@@ -15,8 +15,8 @@
       <h1>Memory Game</h1>
     </div>
     <div id="game">
-      <button name="reset" onclick="resetGame()">Reset</button>
-      <button name="start" onclick="startGame()">Start</button>
+      <button name="reset" onclick="resetGame()" id="reset">Reset</button>
+      <button name="start" onclick="loadNumber()" id="start">Start</button>
     </div>
 
     <div class="timer">
@@ -26,19 +26,19 @@
 
     <div id="play-area">
       <div class="tile">
-        <div class="flip3D">
-          <div class="back">
-            <p></p>
-          </div>
-          <div class="front"></div>
-        </div>
+        <!-- <div class="flip3D">
+          <div class="back"> -->
+        <p></p>
+        <!-- </div> -->
+        <div class="front"></div>
       </div>
+
       <div class="tile">
         <div class="flip3D">
-          <div class="back">
-            <p></p>
-          </div>
-          <div class="front"></div>
+          <!-- <div class="back"> -->
+          <p></p>
+          <!-- </div> -->
+          <!-- <div class="front"></div> -->
         </div>
       </div>
       <div class="tile">
@@ -157,6 +157,7 @@
   </div>
 
   <script src="main.js"></script>
+
 </body>
 
 </html>

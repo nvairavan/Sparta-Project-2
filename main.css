@@ -5,6 +5,33 @@ body {
 	transition: .6s;
 }
 
+#play-area {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+/* #winScreen {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	transition: background .4s;
+	overflow-y: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#winScreen p {
+	color: white;
+	font-size: 60px;
+	transform: translateY(-70vh);
+	user-select: none;
+	text-shadow: 2px 2px 0 black;
+	animation: textDrop 2s;
+} */
+
 button {
 	width: 600px;
   height: 50px;
@@ -27,7 +54,9 @@ button {
 	width: 110px;
 	margin: 20px;
 	border: 1px solid;
-	cursor: pointer;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  position: relative;
 }
 
 .tile p {
@@ -37,13 +66,24 @@ button {
 	position: relative;
 	top: 50%;
 	transform: translateY(-50%);
-	/* filter: blur(20px); */
-	/* user-select: none; */
+	filter: blur(5px);
+	user-select: none;
+}
+
+.matched {
+	border-radius: 50%;
+	transition: 1s;
+	background: blue;
 }
 
 
+.matched p {
+	filter: blur(0px);
+}
+
 .flip3D{ 
   width:110px; height:110px; margin:0px; float:left;
+ 
  }
 
 .flip3D > .front{
@@ -66,3 +106,8 @@ button {
 .flip3D:hover > .back{
 	transform: perspective( 600px ) rotateY( 0deg );
 }
+/* 
+.back:active{
+ transform: perspective( 600px ) rotateY( 180deg ) 
+} */
+
