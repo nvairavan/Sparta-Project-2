@@ -3,12 +3,6 @@ body {
   transition: .6s;
 }
 
-#play-area {
-	display: flex;
-  flex-wrap: wrap;
-	justify-content: center;
-}
-
 button {
 	width: 150px;
   height: 50px;
