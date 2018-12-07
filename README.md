@@ -11,10 +11,9 @@ Memory game where the user have to match two similar number by clicking the card
 * Follow the link and clone the project https://github.com/nvairavan/Sparta-Project-2
 * Open index.html file to play the game.
 
-(If its hosted on Github Pages then...)
-#### You can view the page [here]()
+#### You can view the page [https://nvairavan.github.io/Sparta-Project-2/]()
 
-### Challenges (you can include images and code block here)
+### Challenges
 1. Unblurring tiles onclick.
 2. Making the numbers to disappear if not matched on second click.
 3. Making the numbers to stay when matched.
