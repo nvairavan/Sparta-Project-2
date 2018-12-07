@@ -1,5 +1,5 @@
 var tiles = 16;
-var timer = 3;
+var timer = 5;
 var points = 0;
 
 var numsToAssign = [];
@@ -97,28 +97,25 @@ function startGame() {
 }
 // Removes click events on tiles to be able to see the second tile, then adds events back.
 function tilesClickDelayAndWinCheck() {
-  let notMatchedTiles = 16;
+  let notMatchedTiles = 0;
 
   for (let i = 0; i < tiles.length; i++) {
     tiles[i].removeEventListener('click', matching);
-
     if (!tiles[i].classList.contains('matched')) {
-      notMatchedTiles++;
+      notMatchedTiles += 1;
     }
-    if (notMatchedTiles === 0) {
-      console.log('You won!');
-      // winMenu();
-      clearTimeout(timer);
-      alert("Winner")
-      return;
-      alert("Game over, You Won!");
-    }
-    setTimeout(() => {
-      for (let i = 0; i < tiles.length; i++) {
-        tiles[i].addEventListener('click', matching);
-      }
-    }, 400);
   }
+  if (notMatchedTiles === 0) {
+    // alert(notMatchedTiles);
+    // winMenu();
+    return;
+  }
+
+  setTimeout(() => {
+    for (let i = 0; i < tiles.length; i++) {
+      tiles[i].addEventListener('click', matching);
+    }
+  }, 400);
 }
 
 function disableScreen() {
@@ -128,8 +125,10 @@ function disableScreen() {
   div.className += "overlay";
   document.body.appendChild(div);
 
-
-  // document.getElementById("play-area").style.display = "none";
-
-  alert("You Lost")
+  // Asks user for replaying the game
+  if (confirm("You weren't able to finish the game on time, Do you want to play the game again?")) {
+    location.reload()
+  } else {
+    // Do nothing!
+  }
 }
