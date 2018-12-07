@@ -1,6 +1,6 @@
 # Sparta-Project-2
 ### Description
-Memory game where the user have to match two similar number by clicking the tiles/cards.
+Memory game where the user have to match two similar number by clicking the cards.
 
 ### Languages used
 * HTML
