@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Memory Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+
+<body background="/Sparta.png">
+
+  <div id="container">
+
+    <div id="intro">
+      <h1>Memory Game</h1>
+      <hr>
+    </div>
+
+    <div id="play-area">
+      <div class="tile">
+        <p></p>
+      </div>
+      <div class="tile">
+        <p></p>
+      </div>
+      <div class="tile">
+        <p></p>
+      </div>
+      <div class="tile">
+        <p></p>
+      </div>
+      <div class="tile">
+        <p></p>
+      </div>
+      <div class="tile">
+        <p></p>
+      </div>
+      <div class="tile">
+        <p></p>
+      </div>
+      <div class="tile">
+        <p></p>
+      </div>
+      <div class="tile">
+        <p></p>
+      </div>
+      <div class="tile">
+        <p></p>
+      </div>
+      <div class="tile">
+        <p></p>
+      </div>
+      <div class="tile">
+        <p></p>
+      </div>
+      <div class="tile">
+        <p></p>
+      </div>
+      <div class="tile">
+        <p></p>
+      </div>
+      <div class="tile">
+        <p></p>
+      </div>
+      <div class="tile">
+        <p></p>
+      </div>
+    </div>
+
+    <div class="info">
+      <div id="game">
+        <button name="reset" onclick="resetGame()" id="reset">Reset</button><br>
+        <button name="start" onclick="loadNumber()" id="start">Start</button>
+      </div>
+
+      <div class="timer">
+        <p id="timer">Time Left : 25</p>
+      </div>
+
+      <div id="timeout"></div>
+    </div>
+
+  </div>
+
+  <script src="main.js"></script>
+
+</body>
+
+</html>

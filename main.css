@@ -1,0 +1,90 @@
+body {
+	margin: 10px;
+  transition: .6s;
+}
+
+button {
+	width: 150px;
+  height: 50px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 30px;  
+  background-color: red; 
+  font-style: italic;
+  font-size: 15px;
+}
+
+.timer{
+  color: red;
+  font-size: 25px;
+  font-style: italic;
+  margin: 5px 10px;
+}
+
+#intro {
+  text-align: center;
+  color: red;
+  font-size: 20px;
+  font-style: italic;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: -20px;
+}
+
+.info{
+  margin: -550px 0px;
+}
+
+#play-area {
+	display: flex;
+	flex-wrap: wrap;
+  justify-content: center;
+  margin: 0px 400px;
+  background-color: grey;
+  padding: 25px 25px;
+  border:8px solid black;
+}
+
+.tile {
+	height: 110px;
+	width: 110px;
+	margin: 10px;
+	border: 1px solid;
+  cursor: pointer;
+  background-color: red;
+}
+
+.tile p {
+	font-size: 30px;
+	margin: 0;
+	padding: 35%;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	filter: blur(15px);
+	user-select: none;
+}
+
+.matched {
+	transition: 1s;
+  background: blue;
+  border: 1px solid;
+}
+
+.matched p {
+	filter: blur(0px);
+}
+
+.overlay {
+  align-items: center;
+  background: rgba(255,255,255,0.75);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  opacity: 1;
+  position: absolute;
+  height: 200%;
+  top: 0;
+  transition: all 500ms ease-out;
+  z-index: 1000;
+}
