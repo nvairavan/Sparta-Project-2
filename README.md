@@ -1,6 +1,6 @@
 # Sparta-Project-2
 ### Description
-
+Memory game where the user have to match two similar number by clicking the tiles/cards.
 
 ### Languages used
 * HTML
@@ -8,10 +8,7 @@
 * Javascript
 
 ### How to download
-1. 
-2. 
-3. 
-4. 
+Follow the link and clone the project https://github.com/nvairavan/Sparta-Project-2
 
 (If its hosted on Github Pages then...)
 #### You can view the page [here]()
@@ -23,7 +20,6 @@
 4. Popup texts once the game is finished before time runs out.
 
 ### Learning points
-1. 
-2. 
-3. 
-4. 
+1. Independently solving problem.
+2. Better knowledge on addeventlistener syntax.
+3. Creating overlay page from JS. 

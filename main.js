@@ -106,7 +106,6 @@ function tilesClickDelayAndWinCheck() {
     }
   }
   if (notMatchedTiles === 0) {
-    // alert(notMatchedTiles);
     // winMenu();
     return;
   }
