@@ -1,15 +1,13 @@
 var tiles = 16;
-var timer = 5;
-var points = 0;
+var timer = 25;
 
 var numsToAssign = [];
 for (let i = 0; i < tiles / 2; i++) {
   numsToAssign.push(i, i);
 }
 
+// Assign each number of numsToAssign to each tile randomly
 function loadNumber() {
-
-  // Assign each number of `numsToAssign` to each tile randomly
   var randomNum = Math.floor(Math.random() * 10 + 1);
   var randomTile = document.querySelectorAll('.tile p')[randomNum];
 
@@ -52,6 +50,13 @@ function startGame() {
     tiles[i].addEventListener('click', matching);
   }
 
+  /****************************Check for match******************************
+  If the tiles matches:
+   - add 'matched' class to the matched tiles;
+   - remove the click event for the matched tiles;
+   - remove blur for the matched tiles;
+  Else keep the blur.
+  **************************************************************************/
 
   function matching(e) {
     if (!firstClickedTile) {
@@ -60,14 +65,6 @@ function startGame() {
     } else if (e.target !== firstClickedTile) {
       secondClickedTile = e.target;
       secondClickedTile.style.filter = 'blur(0px)';
-
-      /*
-      If the tiles match:
-       - add 'matched' class to the matched tiles;
-       - remove the click event for the matched tiles;
-       - remove blur for the matched tiles;
-      Else keep the blur.
-      */
 
       if (firstClickedTile.innerText == secondClickedTile.innerText) {
         firstClickedTile.classList.add('matched');
@@ -95,6 +92,7 @@ function startGame() {
     }
   }
 }
+
 // Removes click events on tiles to be able to see the second tile, then adds events back.
 function tilesClickDelayAndWinCheck() {
   let notMatchedTiles = 0;
@@ -106,7 +104,6 @@ function tilesClickDelayAndWinCheck() {
     }
   }
   if (notMatchedTiles === 0) {
-    // winMenu();
     return;
   }
 
@@ -117,9 +114,8 @@ function tilesClickDelayAndWinCheck() {
   }, 400);
 }
 
+// creates div with overlay class and adds it to the DOM
 function disableScreen() {
-  // creates <div class="overlay"></div> and 
-  // adds it to the DOM
   var div = document.createElement("div");
   div.className += "overlay";
   document.body.appendChild(div);
@@ -127,7 +123,5 @@ function disableScreen() {
   // Asks user for replaying the game
   if (confirm("You weren't able to finish the game on time, Do you want to play the game again?")) {
     location.reload()
-  } else {
-    // Do nothing!
   }
 }

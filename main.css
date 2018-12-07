@@ -1,7 +1,5 @@
 body {
 	margin: 10px;
-	/* background: rgb(15%, 15%, 15%); */
-	/* font-family: sans-serif; */
   transition: .6s;
 }
 
@@ -39,7 +37,7 @@ button {
 }
 
 .info{
-margin: -550px 0px;
+  margin: -550px 0px;
 }
 
 #play-area {

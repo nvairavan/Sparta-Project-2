@@ -1,6 +1,6 @@
 # Sparta-Project-2
 ### Description
-Memory game where the user have to match two similar number by clicking the cards.
+Memory game where the user have to match two similar number by clicking the cards within the given time.
 
 ### Languages used
 * HTML
@@ -8,7 +8,8 @@ Memory game where the user have to match two similar number by clicking the card
 * Javascript
 
 ### How to download
-Follow the link and clone the project https://github.com/nvairavan/Sparta-Project-2
+* Follow the link and clone the project https://github.com/nvairavan/Sparta-Project-2
+* Open index.html file to play the game.
 
 (If its hosted on Github Pages then...)
 #### You can view the page [here]()
